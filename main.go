@@ -53,20 +53,20 @@ func main() {
 	}
 
 	fmt.Println(Kelas)
-	// for index, data := range Kelas {
-	// 	if data.NilaiRata > 75 {
-	// 		data.Jurusan = "IPA"
-	// 	} else if data.NilaiRata > 50 {
-	// 		data.Jurusan = "IPS"
-	// 	} else {
-	// 		data.Jurusan = "Bahasa"
-	// 	}
-	// 	Kelas[index] = data
+	for index, data := range Kelas {
+		if data.NilaiRata > 75 {
+			data.Jurusan = "IPA"
+		} else if data.NilaiRata > 50 {
+			data.Jurusan = "IPS"
+		} else {
+			data.Jurusan = "Bahasa"
+		}
+		Kelas[index] = data
 
-	// 	fmt.Println(index)
-	// 	fmt.Println("Siswa ini bernama", data.Nama)
-	// 	fmt.Println("Nilai siswa ini adalah", data.NilaiRata)
-	// 	fmt.Println("Siswa ini masuk kedalam", data.Jurusan)
-	// 	fmt.Println("_________________________________")
-	// }
+		fmt.Println(index)
+		fmt.Println("Siswa ini bernama", data.Nama)
+		fmt.Println("Nilai siswa ini adalah", data.NilaiRata)
+		fmt.Println("Siswa ini masuk kedalam", data.Jurusan)
+		fmt.Println("_________________________________")
+	}
 }
