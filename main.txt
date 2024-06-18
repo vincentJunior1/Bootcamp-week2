@@ -1,0 +1,111 @@
+package main
+
+import (
+	"fmt"
+)
+
+type Siswa struct {
+	Nama       string
+	Kelas      int
+	RataNilai  int
+	Penjurusan string
+}
+
+func main() {
+	// Variable Tipe Data String
+	var nama string = "Vincent "
+	// fmt.Println("Nama sebelum di rubah", nama)
+	/*Long code
+	nama = nama + "Junior"
+	*/
+	// ShortCode
+	nama += "Junior"
+	// fmt.Println("Nama setelah di rubah", nama)
+
+	//  Variable integer
+	var harga int = 10000
+	harga += 10000
+	// fmt.Println("Harga adalah", harga)
+
+	// Varible decimal
+	var angkaDecimal float64 = 300.22
+	angkaDecimal += 0.33
+
+	// fmt.Println("Angka Decimal adalah", angkaDecimal)
+	// shortcode pembuatan variable
+	// data := "Nama"
+
+	// Variable boolean
+	// var gwCowo bool = true
+	// fmt.Println("Apakah gw cowo sebelum jadi trans", gwCowo)
+
+	// gwCowo = false
+
+	// fmt.Println("Apakah gw cowo setelah jadi trans", gwCowo)
+
+	// [Vincent Renson Udin]
+	// var kelasPemrograman []string = []string{"Vincent", "Renson", "Udin"}
+	// var nilaiSiswa []int = []int{1, 2, 3}
+
+	// fmt.Println("Daftar Kelas Pemrograman", kelasPemrograman[2])
+	// fmt.Println("Daftar Nilai Kelas Pemrograman", nilaiSiswa[0])
+
+	siswaBaru := Siswa{
+		Nama: "Vincent",
+	}
+
+	fmt.Println("Ini siswa Baru ", siswaBaru.Penjurusan)
+
+	siswaBaru.Kelas = 10
+	siswaBaru.RataNilai = 50
+
+	// Jika siswa baru rata rata nilai harus lebih besar dari 75 maka dia IPA, Jika nilai rata rata lebih besar dari 50 maka IPS
+	// Kurang dari itu maka Bahasa
+
+	if siswaBaru.RataNilai > 75 {
+		siswaBaru.Penjurusan = "IPA"
+	} else if siswaBaru.RataNilai > 50 {
+		siswaBaru.Penjurusan = "IPS"
+	} else {
+		siswaBaru.Penjurusan = "Bahasa"
+	}
+
+	fmt.Println("Ini siswa Baru dengan data yang terupdate", siswaBaru)
+	// Array Struct
+	siswaKelas10 := []Siswa{}
+
+	siswaKelas10 = append(siswaKelas10, Siswa{
+		Nama:      "Vincent",
+		Kelas:     10,
+		RataNilai: 50,
+	})
+	siswaKelas10 = append(siswaKelas10, Siswa{
+		Nama:      "Renson",
+		Kelas:     10,
+		RataNilai: 76,
+	})
+	siswaKelas10 = append(siswaKelas10, Siswa{
+		Nama:      "Udin",
+		Kelas:     10,
+		RataNilai: 74,
+	})
+
+	for index, data := range siswaKelas10 {
+		if data.RataNilai > 75 {
+			siswaKelas10[index].Penjurusan = "IPA"
+		} else if data.RataNilai > 50 {
+			siswaKelas10[index].Penjurusan = "IPS"
+		} else {
+			siswaKelas10[index].Penjurusan = "Bahasa"
+		}
+	}
+
+	fmt.Println(siswaKelas10)
+
+	// Angka Itu 1 apakah satu lebih besari dari 10??
+	// for angka := 1; angka <= 10; angka++ {
+	// 	fmt.Println("Ini angka ke", angka)
+	// }
+
+	fmt.Println("Hello world")
+}
