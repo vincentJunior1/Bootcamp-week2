@@ -51,6 +51,8 @@ func main() {
 	for _, data := range Kelas {
 		fmt.Println(data.Nama)
 	}
+
+	fmt.Println(Kelas)
 	// for index, data := range Kelas {
 	// 	if data.NilaiRata > 75 {
 	// 		data.Jurusan = "IPA"
